@@ -150,3 +150,5 @@ Real-World Examples and Scenarios
 A writer could prompt AI to generate a fantasy quest description in the style of Tolkien, or a sci-fi battle scene mimicking the pacing of a modern action movie. Marketers might use this to generate ad copy in a playful, humorous tone versus a sophisticated, authoritative one.
 
 Provide Context in Every Prompt: When generating subsequent sections of your story, re-include key details about characters, plot points, and world rules.
+
+Example Prompt Snippet:
