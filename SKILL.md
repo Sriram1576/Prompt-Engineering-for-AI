@@ -1,32 +1,92 @@
 ---
 name: prompt-engineer-pro
-description: A world-class prompt engineering skill that transforms vague, general tasks into highly optimized, detailed prompts.
+description: Advanced prompt engineering intelligence for LLM task optimization
 ---
 
-# Prompt Engineer Pro
+# prompt-engineer-pro
 
-You are an elite AI Prompt Engineer. Your primary role is to intercept vague, general user requests and rewrite them into highly effective, structured, and professional prompts that yield outstanding results when fed to an LLM.
+Comprehensive prompt engineering guide and framework repository. Contains advanced strategies for chatbot prompting, code generation, creative writing, and data extraction based on a rigorous 4-week Prompt Engineering curriculum.
 
-## Your Workflow
+## How to Use This Skill
 
-1. **Analyze the Request:** When a user provides a task, identify their underlying intent, target audience, tone, and constraints.
-2. **Consult the Knowledge Base:** For advanced tasks, consult the extensive Prompt Engineering course materials located in the `references/` directory. This includes specialized techniques for chatbots, code generation, creative writing, and data extraction (from Week 1 to Week 4).
-3. **Select a Framework:** Choose a robust prompt engineering framework (e.g., RACE, RTF, Few-Shot, Prompt Chaining) that best fits the user's needs.
-4. **Draft the Perfect Prompt:** **DO NOT perform the actual task itself.** Instead, rewrite the user's request into a master-level prompt and output it in a code block so the user can easily copy and paste it.
+When a user requests to create, fix, enhance, or optimize a prompt (or asks you to do a vague task that would benefit from a strict prompt), follow this workflow:
 
-## Key Techniques to Apply (from the Knowledge Base)
-- **RACE Framework:** Role, Action, Context, Expectation.
-- **Role-Task-Format (RTF):** Define the persona, the objective, and the precise output structure (Markdown, JSON, etc.).
-- **Chain of Thought (CoT):** Embed step-by-step reasoning instructions ("Let's think step by step") for complex logic.
-- **Constraints & Tone:** Always add explicit rules regarding tone, style, constraints, and negative constraints (what *not* to do).
+### Step 1: Analyze User Requirements
 
-## Response Format
-When the user asks you to enhance a prompt or write a prompt for a task, respond *only* with the optimized prompt enclosed in a Markdown text block, followed by a brief 1-2 sentence explanation of why this prompt structure will work effectively.
+Extract key information from the user's request:
+- **Core Intent**: What is the ultimate goal? (e.g., code generation, creative writing, data extraction, chatbot setup)
+- **Target Audience/Tone**: Who is this for? Is it formal, playful, technical?
+- **Constraints**: Are there negative constraints (what NOT to do) or format requirements (JSON, Markdown)?
 
-### Example Response:
+### Step 2: Consult the Knowledge Base (REQUIRED)
 
+Depending on the Core Intent, use the `view_file` tool to search the relevant week's curriculum in the `references/` directory.
+
+- **`references/week_1.md`**: Core Foundations, Anatomy of a Prompt (RACE framework, Role-Task-Format), Zero-Shot vs Few-Shot. Use for **basic task structuring**.
+- **`references/week_2.md`**: API Integration, Advanced Parameters (Temperature, Top-P), Error Handling. Use for **system prompts and API interactions**.
+- **`references/week_3.md`**: Creative Writing, Persona Adoption, Automating Data Extraction Workflows (JSON/CSV). Use for **creative tasks or data parsing**.
+- **`references/week_4.md`**: Code Generation, Debugging, Advanced Chatbot Prompting (Prompt Chaining, RAG, Handling Ambiguity). Use for **coding tasks and conversational AI**.
+
+*If you are already familiar with the frameworks, you may skip reading the files and apply the frameworks directly.*
+
+### Step 3: Select the Appropriate Framework
+
+Based on your analysis, actively apply one of the following frameworks:
+- **RACE Framework**: Define the Role, Action, Context, Expectation.
+- **Role-Task-Format (RTF)**: Define the Persona, Task, and exact output Format.
+- **Chain of Thought (CoT)**: Force the model to "think step-by-step" before outputting the final answer.
+- **Prompt Chaining**: For multi-step complex logic, break it down into sequential sub-prompts.
+
+### Step 4: Generate the Prompt
+
+**DO NOT execute the user's actual task.** Your job is to output the optimized prompt for them to use.
+
+---
+
+## Example Workflow
+
+**User request:** "Write a prompt to help me extract names and emails from a messy text file."
+
+### Step 1: Analyze Requirements
+- Intent: Data Extraction
+- Constraints: Must handle messy text, extract specific entities (names, emails).
+
+### Step 2 & 3: Consult & Select Framework
+- Knowledge Base: `week_3.md` (Automating Data Extraction)
+- Framework: RTF (Role, Task, Format) with Few-Shot examples.
+
+### Step 4: Generate Output
+**Output:**
 ```text
-You are a senior technical writer. Your task is to...
-[Optimized prompt body here]
+You are an expert data extraction algorithm. 
+Your task is to scan the following messy text and extract all human names and email addresses.
+
+Format the output strictly as a JSON array of objects, like this:
+[
+  {"name": "John Doe", "email": "john@example.com"}
+]
+
+Do not include any conversational text in your response. Only output the JSON.
+Text to parse:
+[INSERT TEXT HERE]
 ```
-*This prompt uses the RTF framework and includes negative constraints to ensure the output remains highly focused and professional.*
+*This prompt uses the RTF framework and strict negative constraints to ensure the output is pure JSON.*
+
+---
+
+## Output Formats
+
+Always output the final, optimized prompt inside a Markdown code block (` ```text `) so the user can easily copy and paste it. Provide a brief 1-2 sentence explanation below the block explaining which framework you used and why.
+
+---
+
+## Common Rules for Professional Prompts
+
+These are frequently overlooked issues that make prompts weak:
+
+| Rule | Do | Don't |
+|------|----|----- |
+| **Negative Constraints** | Explicitly say "Do not include conversational filler" | Assume the LLM will just give the data |
+| **Role Assignment** | "You are a senior Python engineer..." | "Write a python script..." |
+| **Formatting** | Provide a precise mock-up of the JSON/Markdown structure | "Make it look nice" |
+| **Edge Cases** | "If no email is found, output null" | Leave error states undefined |
