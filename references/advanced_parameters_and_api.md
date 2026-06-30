@@ -281,14 +281,23 @@ For most use cases, adjusting Temperature is more intuitive. If you need very pr
 Section 2: Max_tokens - Controlling Output Length and Cost
 The Max_tokens parameter is a critical control for managing the length of the generated text. It sets an upper limit on the number of tokens the model will generate in its response. Understanding and utilizing this parameter effectively is vital for both controlling the user experience and managing API costs.
 
+A token can be thought of as a piece of a word (roughly 4 characters in English). If you set `max_tokens=50`, the model will stop generating after 50 tokens, even if it is in the middle of a sentence. This parameter is highly useful when building applications that need concise answers, such as short summaries or titles, or when you are strict on your API usage budget. Remember that the total tokens used in a request is the sum of the prompt tokens and the generated (completion) tokens. If this sum exceeds the model's maximum context length, the API will return an error.
+
 Section 3: Frequency and Presence Penalties - Discouraging Repetition
 The Frequency Penalty and Presence Penalty parameters are powerful tools for controlling the repetitiveness of the generated text. They help ensure that the model doesn't overuse certain words or phrases, leading to more natural and engaging output.
+
+- **Frequency Penalty**: This penalty scales based on how many times a token has already appeared in the generated text. A higher frequency penalty (e.g., 0.5 to 1.0) discourages the model from repeating the same exact words or phrases. Use this when the output feels too repetitive or loops back to the same concepts.
+- **Presence Penalty**: This penalty applies a flat reduction to the probability of any token that has appeared at least once in the generated text. It doesn't matter if the token appeared once or ten times; the penalty is the same. This encourages the model to introduce new topics and broadens the scope of the generated text. Adjust this when you want the model to transition more freely to new ideas.
 
 Section 4: Stop Sequences - Defining Generation Boundaries
 Stop Sequences are a powerful mechanism for controlling the generation process by specifying exact strings that, when encountered by the model, will cause it to cease generating further text. This is incredibly useful for ensuring that generated content adheres to specific formats or terminates at logical points.
 
+For example, if you are generating a list of items and you want the model to stop after the first item, you could pass `stop=["\n"]` or `stop=["2."]`. Once the API generates the stop sequence, it immediately halts and returns the text generated up to (but not including) the stop sequence. You can provide up to four stop sequences in a single request. This is particularly useful in few-shot prompting where you provide examples of Q&A formats and use a stop sequence like `"Q:"` to prevent the model from hallucinating the next question.
+
 Section 5: System Messages - Guiding Model Persona and Context
 The System Message is a powerful, often underutilized, feature in chat-based models (like GPT-3.5 Turbo and GPT-4) that allows you to set the context, persona, and overall behavior of the AI assistant. It acts as a high-level instruction that precedes the user's messages.
+
+By placing an initial message with the role `"system"` at the beginning of the `messages` array, you provide a foundational set of rules. For instance, `{"role": "system", "content": "You are a helpful assistant that only speaks in Shakespearean English."}` will consistently anchor the model's tone across the entire conversation. Without a system message, the model defaults to a generic helpful assistant persona, but tailoring this instruction is a cornerstone of advanced prompt engineering.
 
 Section 6: Practical Parameter Tuning - A Hands-On Exploration
 This section is dedicated to practical, hands-on experimentation with the advanced API parameters we've discussed. By actively tuning these settings, you will gain an intuitive understanding of their impact on model output. We will focus on three key areas: Temperature/Top_p, Stop Sequences, and System Messages.
@@ -308,17 +317,101 @@ The OpenAI API provides a powerful interface to access cutting-edge AI models li
 Hands-On: Developing a Simple Command-Line Chatbot
 Let's build a basic command-line chatbot that allows users to interact with the OpenAI API. This project will demonstrate how to send user input, receive AI responses, and maintain a conversational flow.
 
+```python
+import openai
+import os
+
+# Ensure your API key is set in your environment
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+messages = [{"role": "system", "content": "You are a helpful AI assistant."}]
+
+while True:
+    user_input = input("You: ")
+    if user_input.lower() in ['exit', 'quit']:
+        break
+    
+    messages.append({"role": "user", "content": user_input})
+    
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=messages
+    )
+    
+    assistant_reply = response.choices[0].message["content"]
+    print(f"AI: {assistant_reply}")
+    messages.append({"role": "assistant", "content": assistant_reply})
+```
+This loop continuously prompts the user for input, appends it to the `messages` history, and retrieves the AI's response, creating a continuous conversation context.
+
 Building a Text Summarization Tool using the API
 Text summarization is a powerful application of AI, allowing us to condense large amounts of information into concise summaries. We can leverage the OpenAI API to build a tool that automatically summarizes articles, documents, or any given text.
 
+```python
+import openai
+
+def summarize_text(text):
+    prompt = f"Please summarize the following text in one paragraph:\n\n{text}"
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=150,
+        temperature=0.5
+    )
+    return response.choices[0].message["content"]
+
+long_text = "... (insert long article here) ..."
+print(summarize_text(long_text))
+```
+Here, we use `temperature=0.5` to keep the summary focused and factual, and `max_tokens` to ensure the output remains concise.
+
 Content Generation Script: Ideas for Blog Posts
 Content creation is a significant area where AI can provide immense value. We can use the OpenAI API to generate ideas for blog posts, articles, or marketing copy, helping overcome writer's block and spark creativity.
+
+```python
+import openai
+
+def generate_blog_ideas(topic, num_ideas=3):
+    prompt = f"Generate {num_ideas} creative and catchy blog post titles about {topic}, along with a one-sentence summary for each."
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.8
+    )
+    return response.choices[0].message["content"]
+
+print(generate_blog_ideas("Artificial Intelligence in Healthcare"))
+```
+Using a higher temperature (e.g., 0.8) encourages the model to generate more diverse and creative ideas.
 
 Error Handling and Rate Limiting with the OpenAI API
 When building applications, robust error handling and understanding rate limits are crucial for reliability and a good user experience. The OpenAI API, like any external service, can encounter issues, and it imposes limits on request frequency. Learning how to implement retry logic, gracefully handle API errors, and respect rate limits ensures that your application remains stable and performs predictably under varying loads.
 
 Hands-On: Integrating API Calls into a Loop for Batch Processing
 Batch processing is essential when you need to perform an operation on multiple items, such as summarizing many documents or generating content for a list of products. This section demonstrates how to integrate API calls into a loop, incorporating error handling and rate limiting considerations.
+
+When processing large lists, you may run into API rate limits (e.g., requests per minute). It's best practice to use delays (`time.sleep`) and try-except blocks.
+```python
+import openai
+import time
+
+topics = ["Space Exploration", "Deep Sea Discovery", "Quantum Computing"]
+results = []
+
+for topic in topics:
+    try:
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": f"Write a one-sentence fun fact about {topic}."}]
+        )
+        results.append(response.choices[0].message["content"])
+        time.sleep(1) # Basic rate-limiting
+    except Exception as e:
+        print(f"Error processing {topic}: {e}")
+
+for r in results:
+    print(r)
+```
 
 Real-World Use Cases for Programmatic Prompting
 The ability to programmatically send prompts to AI models unlocks a vast array of real-world applications across numerous industries. These applications go beyond simple text generation and can automate complex tasks, enhance user experiences, and drive innovation.
@@ -395,6 +488,8 @@ While pipelines offer a convenient abstraction, understanding how to load models
 Generating Text with Hugging Face Models
 Text generation is one of the most exciting applications of modern NLP, and Hugging Face Transformers makes it accessible. This involves using models that are trained to predict the next word (or token) in a sequence, allowing them to generate coherent and contextually relevant text.
 
+With the `pipeline` API, generating text is incredibly simple. You can instantiate a text generation pipeline by calling `generator = pipeline('text-generation', model='gpt2')`. From there, passing a prompt like `generator("In a distant future,", max_length=50)` will invoke the model to continue the sentence. The model processes your input sequence and auto-regressively predicts subsequent tokens until the `max_length` is reached or an end-of-sequence token is generated.
+
 Exploring Diverse Model Architectures
 The Hugging Face Hub hosts a vast array of models, each with unique architectures designed for different purposes. Understanding these architectures helps in selecting the right tool for your prompt engineering tasks.
 
@@ -415,11 +510,51 @@ While prompt engineering allows us to guide pre-trained models without altering 
 Prompting for Text Classification and Sentiment Analysis
 Text classification is a fundamental NLP task that involves assigning predefined categories or labels to text data. Sentiment analysis is a popular sub-task, focusing on identifying the emotional tone (positive, negative, neutral) expressed in text. Hugging Face models, particularly those based on architectures like BERT, RoBERTa, and DistilBERT, are highly effective for these tasks, especially when guided by well-crafted prompts.
 
+Using zero-shot classification pipelines, you can classify text without fine-tuning by simply providing a list of candidate labels. For example:
+```python
+from transformers import pipeline
+classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
+sequence = "I loved the new Batman movie, the cinematography was breathtaking!"
+candidate_labels = ["entertainment", "politics", "sports"]
+result = classifier(sequence, candidate_labels)
+print(result)
+```
+This approach reformulates the classification problem into a natural language inference task, allowing the model to determine how strongly the input sequence entails each candidate label.
+
 Question Answering with Hugging Face Models
 Question Answering (QA) is a powerful capability where an AI model can understand a given context (a passage of text) and answer specific questions based on that context. Hugging Face provides access to state-of-the-art models fine-tuned for extractive QA, meaning they identify the span of text within the context that answers the question.
 
+You can easily instantiate a QA pipeline to extract answers:
+```python
+from transformers import pipeline
+
+qa_pipeline = pipeline("question-answering", model="deepset/roberta-base-squad2")
+context = "Hugging Face is a company based in New York and Paris that develops tools for building applications using machine learning."
+question = "Where is Hugging Face based?"
+
+result = qa_pipeline(question=question, context=context)
+print(f"Answer: {result['answer']}, Score: {result['score']:.4f}")
+```
+The model will output "New York and Paris" along with a confidence score indicating how certain it is about the extracted span.
+
 Summarization and Translation Tasks
 Summarization and translation are two of the most impactful applications of modern NLP. Hugging Face provides access to numerous pre-trained models, particularly sequence-to-sequence models like BART, T5, and Pegasus, which excel at these tasks. Prompting plays a key role in guiding these models to produce desired outputs.
+
+For instance, the `T5` model was trained in a text-to-text format, meaning you must prefix the prompt with task-specific instructions like `"summarize: "` or `"translate English to French: "`.
+```python
+from transformers import pipeline
+
+# Summarization Example
+summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+text = "The quick brown fox jumps over the lazy dog. The dog woke up and started chasing the fox into the dense forest, where they both eventually got tired and rested."
+summary = summarizer(text, max_length=20, min_length=5, do_sample=False)
+print("Summary:", summary[0]['summary_text'])
+
+# Translation Example
+translator = pipeline("translation_en_to_fr", model="Helsinki-NLP/opus-mt-en-fr")
+translation = translator("Hello, how are you today?")
+print("Translation:", translation[0]['translation_text'])
+```
 
 Customizing Model Outputs
 Controlling and customizing the output of language models is a critical aspect of prompt engineering. It allows you to tailor the generated text to specific requirements, ensuring relevance, format, and style. Hugging Face models offer several ways to influence their output, primarily through prompt design and generation parameters.

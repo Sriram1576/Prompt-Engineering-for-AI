@@ -391,7 +391,22 @@ Style Mismatch: If the style isn't quite right, try adding more keywords related
 The key takeaway from this practical session is that prompt engineering is an iterative dialogue with the AI. The more precise and descriptive your prompts become, the more control you gain over the generated imagery.
 
 Step-by-Step Experiment Guide
+
 Prompt Deconstruction Example
+
+Let's break down another prompt to understand how its different elements impact the AI's generated image.
+
+Prompt: A futuristic cyberpunk street scene at night, glowing neon signs reflecting on wet pavement, crowded with diverse people in high-tech clothing. Shot from a low angle, cinematic lighting, photorealistic style.
+
+Deconstruction:
+Subject & Context: A futuristic cyberpunk street scene at night.
+Key Details: Glowing neon signs, wet pavement, diverse people in high-tech clothing.
+Camera Angle/Composition: Low angle.
+Lighting: Cinematic lighting, reflections on wet pavement.
+Style: Photorealistic.
+
+By dissecting prompts in this way, you can see how each descriptive component guides the AI. Now, let's move on to a step-by-step experiment.
+
 Objective: To understand the impact of prompt elements on AI image generation.
 Tools: Access to an AI image generation tool (e.g., Midjourney, DALL-E, Stable Diffusion).
 
@@ -918,6 +933,9 @@ Color Palette: Choose colors that align with the mood and theme.
 
 Example Prompt for a Children's Book Illustration:
 A friendly, fluffy blue monster helping a small child plant a seed in a sunny garden. Bright, cheerful colors, soft rounded shapes, watercolor illustration style, reminiscent of classic children's books. Joyful atmosphere. --ar 4:3
+
+Hands-on Component: Design an illustration for a short story.
+Choose a short paragraph from a favorite book or write a brief scene yourself. Write a prompt to generate an illustration that captures the essence of that text. Focus on matching the emotional tone and selecting an appropriate artistic style (e.g., watercolor, pen and ink, or digital painting) that complements the narrative.
 
 Workflow for Prompt Iteration and Selection
 Generating the perfect AI image is rarely a one-shot process. It involves a systematic approach to prompt engineering, iteration, and selection.
