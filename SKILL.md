@@ -22,10 +22,11 @@ Extract key information from the user's request:
 
 Depending on the Core Intent, use the `view_file` tool to search the relevant week's curriculum in the `references/` directory.
 
-- **`references/week_1.md`**: Core Foundations, Anatomy of a Prompt (RACE framework, Role-Task-Format), Zero-Shot vs Few-Shot. Use for **basic task structuring**.
-- **`references/week_2.md`**: API Integration, Advanced Parameters (Temperature, Top-P), Error Handling. Use for **system prompts and API interactions**.
-- **`references/week_3.md`**: Creative Writing, Persona Adoption, Automating Data Extraction Workflows (JSON/CSV). Use for **creative tasks or data parsing**.
-- **`references/week_4.md`**: Code Generation, Debugging, Advanced Chatbot Prompting (Prompt Chaining, RAG, Handling Ambiguity). Use for **coding tasks and conversational AI**.
+- **`references/foundations_of_prompting.md`**: Core Foundations, Anatomy of a Prompt (RACE framework, Role-Task-Format), Zero-Shot vs Few-Shot. Use for **basic task structuring**.
+- **`references/advanced_parameters_and_api.md`**: API Integration, Advanced Parameters (Temperature, Top-P), Error Handling. Use for **system prompts and API interactions**.
+- **`references/creative_writing_and_data_extraction.md`**: Creative Writing, Persona Adoption, Automating Data Extraction Workflows (JSON/CSV). Use for **creative tasks or data parsing**.
+- **`references/code_generation_and_chatbots.md`**: Code Generation, Debugging, Advanced Chatbot Prompting (Prompt Chaining, RAG, Handling Ambiguity). Use for **coding tasks and conversational AI**.
+- **`references/image_generation.md`**: AI Image Generation (Midjourney, DALL-E), lighting, styling, textures, character and environment design, negative prompting. Use for **visual and artistic tasks**.
 
 *If you are already familiar with the frameworks, you may skip reading the files and apply the frameworks directly.*
 
@@ -52,7 +53,7 @@ Based on your analysis, actively apply one of the following frameworks:
 - Constraints: Must handle messy text, extract specific entities (names, emails).
 
 ### Step 2 & 3: Consult & Select Framework
-- Knowledge Base: `week_3.md` (Automating Data Extraction)
+- Knowledge Base: `creative_writing_and_data_extraction.md` (Automating Data Extraction)
 - Framework: RTF (Role, Task, Format) with Few-Shot examples.
 
 ### Step 4: Generate Output

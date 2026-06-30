@@ -35,10 +35,11 @@ The agent will analyze your request, consult its internal knowledge base, and ou
 ## 🧠 What's Inside the Knowledge Base?
 
 The skill relies on a built-in curriculum located in the `references/` directory:
-- **Week 1:** Core Foundations (Anatomy of a Prompt, RACE framework, Role-Task-Format, Zero-Shot vs Few-Shot).
-- **Week 2:** Advanced Parameters & API Integration (Temperature, Top-P, Error Handling).
-- **Week 3:** Creative Writing & Automating Data Extraction Workflows (JSON/CSV).
-- **Week 4:** Code Generation, Debugging, & Advanced Chatbot Prompting (Prompt Chaining, RAG, Handling Ambiguity).
+- **`foundations_of_prompting.md`**: Core Foundations (Anatomy of a Prompt, RACE framework, Role-Task-Format, Zero-Shot vs Few-Shot).
+- **`advanced_parameters_and_api.md`**: Advanced Parameters & API Integration (Temperature, Top-P, Error Handling).
+- **`creative_writing_and_data_extraction.md`**: Creative Writing & Automating Data Extraction Workflows (JSON/CSV).
+- **`code_generation_and_chatbots.md`**: Code Generation, Debugging, & Advanced Chatbot Prompting (Prompt Chaining, RAG, Handling Ambiguity).
+- **`image_generation.md`**: AI Image Generation (Midjourney, DALL-E), lighting, styling, textures, character and environment design, negative prompting.
 
 ## 🛠️ Architecture
 
