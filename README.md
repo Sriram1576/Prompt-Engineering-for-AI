@@ -40,6 +40,7 @@ The skill relies on a built-in curriculum located in the `references/` directory
 - **`creative_writing_and_data_extraction.md`**: Creative Writing & Automating Data Extraction Workflows (JSON/CSV).
 - **`code_generation_and_chatbots.md`**: Code Generation, Debugging, & Advanced Chatbot Prompting (Prompt Chaining, RAG, Handling Ambiguity).
 - **`image_generation.md`**: AI Image Generation (Midjourney, DALL-E), lighting, styling, textures, character and environment design, negative prompting.
+- **`data_interpretation_and_insights.md`**: Data Analysis, Descriptive Statistics, Trend Identification, Hypothesis Generation, and Bias Detection.
 
 ## 🛠️ Architecture
 

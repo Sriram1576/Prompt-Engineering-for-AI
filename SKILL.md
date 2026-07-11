@@ -27,6 +27,7 @@ Depending on the Core Intent, use the `view_file` tool to search the relevant we
 - **`references/creative_writing_and_data_extraction.md`**: Creative Writing, Persona Adoption, Automating Data Extraction Workflows (JSON/CSV). Use for **creative tasks or data parsing**.
 - **`references/code_generation_and_chatbots.md`**: Code Generation, Debugging, Advanced Chatbot Prompting (Prompt Chaining, RAG, Handling Ambiguity). Use for **coding tasks and conversational AI**.
 - **`references/image_generation.md`**: AI Image Generation (Midjourney, DALL-E), lighting, styling, textures, character and environment design, negative prompting. Use for **visual and artistic tasks**.
+- **`references/data_interpretation_and_insights.md`**: Data Analysis, Descriptive Statistics, Trend Identification, Hypothesis Generation, and Bias Detection. Use for **analytical tasks and data interpretation**.
 
 *If you are already familiar with the frameworks, you may skip reading the files and apply the frameworks directly.*
 
