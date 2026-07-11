@@ -28,6 +28,14 @@ Depending on the Core Intent, use the `view_file` tool to search the relevant we
 - **`references/code_generation_and_chatbots.md`**: Code Generation, Debugging, Advanced Chatbot Prompting (Prompt Chaining, RAG, Handling Ambiguity). Use for **coding tasks and conversational AI**.
 - **`references/image_generation.md`**: AI Image Generation (Midjourney, DALL-E), lighting, styling, textures, character and environment design, negative prompting. Use for **visual and artistic tasks**.
 - **`references/data_interpretation_and_insights.md`**: Data Analysis, Descriptive Statistics, Trend Identification, Hypothesis Generation, and Bias Detection. Use for **analytical tasks and data interpretation**.
+- **`references/generating_prompts_for_data_visualization.md`**: Chart Types (Bar, Line, Scatter), Axes, Labels, Color Schemes, BI Tools (Tableau, Power BI), and Python Libraries (Matplotlib, Seaborn). Use for **data visualization tasks**.
+- **`references/integrating_ai_with_data_analysis.md`**: AI-driven Script Generation, Automated Report Generation, Data Cleaning, and Interpreting Insights. Use for **end-to-end data analysis workflows**.
+- **`references/prompt_chaining_and_meta_prompting.md`**: Prompt Chaining, Managing State and Context, Meta-Prompting. Use for **complex AI tasks requiring sequential steps**.
+- **`references/optimizing_prompts_for_performance_and_cost.md`**: Prompt Length Optimization, Few-Shot Efficiency, Tokenization, Inference Speed, Benchmarking. Use for **optimizing prompt cost and performance**.
+- **`references/robustness_reliability_and_ethics.md`**: Handling Ambiguity, Adversarial Prompts, AI Hallucinations, Bias Detection, Responsible AI Usage. Use for **building trustworthy and ethical AI interactions**.
+- **`references/project_ideation_and_scoping.md`**: Identifying AI Opportunities, SMART Goals, Feasibility Assessment, Tool Selection, Project Planning. Use for **planning and scoping real-world AI projects**.
+- **`references/building_a_prototype_bot.md`**: Designing FAQ Prompts, Conversation History Management, UI Integration, Handling Escalations. Use for **building functional AI chatbot prototypes**.
+- **`references/content_generation_pipeline.md`**: Prompt Chaining, AI-Assisted Research, CMS Integration, Quality Metrics, Workflow Optimization. Use for **building scalable automated content pipelines**.
 
 *If you are already familiar with the frameworks, you may skip reading the files and apply the frameworks directly.*
 
