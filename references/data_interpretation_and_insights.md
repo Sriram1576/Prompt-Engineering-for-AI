@@ -458,13 +458,66 @@ You have conducted a customer satisfaction survey for a software product. The su
 **Expected AI Output (Conceptual):** The AI would process the text data to summarize sentiment and list recurring topics like 'intuitive interface' (positive) or 'slow performance' (negative).
 
 ### Prompt 3: Identifying Drivers of Satisfaction/Dissatisfaction
-> "Analyze the relationship between the 'Comments' text and the 'OverallSatisfaction' ratings. 
-> * What specific themes from the 'Comments' are most strongly associated with ratings of 4 or 5 (Highly Satisfied)?
-> * What specific themes from the 'Comments' are most strongly associated with ratings of 1 or 2 (Highly Dissatisfied)?"
+> "Based on the survey data description, investigate which factors ('EaseOfUse', 'FeatureSet', 'CustomerSupport') appear to be the strongest drivers of 'OverallSatisfaction' and 'LikelihoodToRecommend'. Explain your reasoning."
 
-**Expected AI Output (Conceptual):** The AI would correlate qualitative text themes with quantitative ratings, providing actionable insights into exactly what features drive user happiness and what bugs cause the most frustration.
+**Expected AI Output (Conceptual):** The AI might suggest that 'EaseOfUse' has the highest correlation with 'OverallSatisfaction', or that positive 'CustomerSupport' experiences strongly predict higher 'LikelihoodToRecommend'. This requires the AI to infer relationships, potentially by looking at how ratings in one column change with ratings in another.
 
-### Summary and Next Steps
-In this module, we have explored the critical intersection of prompt engineering and data analysis. You learned how to explicitly define datasets and variables, prompt for fundamental summary statistics, guide AI to identify complex trends, and synthesize these findings into actionable hypotheses. Crucially, we concluded by examining practical case studies—analyzing sales transactions and survey feedback—and emphasizing the need for a critical eye regarding bias and statistical limitations.
+### Prompt 4: Generating Hypotheses for Low Scores
+> "We noticed that 'CustomerSupport' ratings are consistently lower than other metrics. Generate three hypotheses that could explain why customers might be dissatisfied with customer support. Consider factors like response time, resolution effectiveness, and support channel availability."
 
-In your next projects, practice treating the AI not just as a calculator, but as an analytical partner. Provide it with deep context, ask it to explain its reasoning, and always challenge its conclusions against real-world logic.
+**Expected AI Output (Conceptual):** Hypotheses could include:
+* Long wait times for support tickets.
+* Support agents lacking technical knowledge.
+* Limited availability of support outside business hours.
+
+### Prompt 5: Considering Survey Limitations and Biases
+> "What are the potential limitations and biases of this customer satisfaction survey data? Consider the distribution method (email), the respondent pool, and the nature of the questions asked. How might these affect the interpretation of the results?"
+
+**Expected AI Output (Conceptual):** Potential limitations and biases might include:
+* **Selection Bias:** Only users who are motivated enough to respond (either very happy or very unhappy) might participate. Users with neutral experiences might not respond.
+* **Sampling Bias:** If the email list is not representative of the entire user base (e.g., only includes users who opted into marketing emails).
+* **Response Bias:** Social desirability bias (respondents wanting to appear positive) or acquiescence bias (tendency to agree).
+* **Limited Scope:** The survey might not cover all aspects of the user experience.
+
+By using these prompts, you can leverage AI to transform raw survey data into actionable insights, guiding product development and customer service improvements.
+
+## Section 8: Summary, Best Practices, and Next Steps
+In this lesson, we've explored the critical skill of prompting AI for data interpretation and insights. We've covered how to describe datasets and variables, prompt for summary statistics (mean, median, variance), identify trends and patterns, generate hypotheses, and critically assess data limitations and biases. We applied these techniques through case studies analyzing sales data and survey results.
+
+### Key Takeaways
+* **Context is King:** Always provide clear descriptions of your data and variables to the AI.
+* **Specificity Drives Accuracy:** The more specific your prompt, the more relevant and accurate the AI's output will be.
+* **Move Beyond Description:** Prompt AI not just for what the data says, but also for why it might be saying it (hypotheses) and what its limitations are.
+* **Iterative Process:** Data interpretation is often iterative. Use AI's initial responses to refine your subsequent prompts.
+* **Critical Evaluation:** Never blindly trust AI output. Always apply your own critical thinking, especially regarding data limitations and biases.
+
+### Best Practices for Prompting Data Interpretation
+* **Start with Clear Objectives:** Know what insights you are looking for before you start prompting.
+* **Define Variables Explicitly:** Ensure the AI understands the meaning, type, and units of each variable.
+* **Use Action Verbs:** Employ verbs like 'analyze', 'calculate', 'identify', 'compare', 'hypothesize', 'evaluate'.
+* **Specify Output Format:** Request results in a clear, structured format (e.g., bullet points, tables, summaries).
+* **Provide Examples (if possible):** For complex tasks, showing the AI an example of the desired output can be highly effective.
+* **Break Down Complex Tasks:** For intricate analyses, use a series of prompts rather than one long, complex prompt.
+* **Be Aware of AI Limitations:** AI can hallucinate or make errors. Always cross-verify critical information.
+
+### Additional Resources
+* **OpenAI Documentation:** For best practices in prompt engineering with models like GPT-3.5/4.
+* **Pandas Documentation:** To understand the underlying data manipulation capabilities that AI might emulate.
+* **Books on Data Analysis and Statistics:** To deepen your understanding of the concepts AI is helping you explore.
+
+### Preparation for the Next Lesson: Generating Prompts for Data Visualization
+The next lesson, Generating Prompts for Data Visualization, will build directly upon the insights we've gained here. To prepare:
+* Review the trends and patterns you identified in the case studies (sales data, survey results). Think about which of these trends would be best communicated visually.
+* Consider different chart types: What kind of chart would best represent a time series trend? What about a comparison between categories? What about showing correlations?
+* Think about clarity: What elements are essential for a clear visualization (e.g., titles, axis labels, legends)?
+
+In the next lesson, we will learn how to craft prompts that instruct AI to generate specific types of charts, define their components, and even suggest aesthetic improvements, bridging the gap from interpreted data to compelling visual narratives.
+
+### Practice Exercise
+Choose a simple, publicly available dataset (e.g., from Kaggle, government data portals). Describe the dataset and its key variables. Then, formulate 3-5 prompts to:
+1. Calculate summary statistics for a key numerical variable.
+2. Identify a trend or pattern involving at least two variables.
+3. Generate a hypothesis related to the observed trend/pattern.
+4. Ask about potential data limitations.
+
+This exercise will solidify your understanding and prepare you for the practical application of prompt engineering in data analysis.
