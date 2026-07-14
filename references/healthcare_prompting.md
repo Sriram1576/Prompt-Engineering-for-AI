@@ -1,5 +1,6 @@
 # Introduction to Prompt Engineering in Healthcare: Bridging AI and Patient Care
 
+
 Welcome to the module on Prompt Engineering in Healthcare. This lesson explores the specialized application of prompt engineering within the medical domain. As the healthcare industry rapidly embraces artificial intelligence to enhance patient care, streamline administration, and accelerate research, effectively utilizing large language models (LLMs) requires crafting precise, contextually relevant prompts. 
 
 This lesson equips you to navigate the unique challenges of healthcare data and workflows. We will cover adapting prompt engineering for medical terminology, understanding domain constraints, and applying these skills to real-world scenarios. By the end, you will be able to engineer effective, ethical, and healthcare-compliant prompts.
@@ -160,3 +161,18 @@ Healthcare prompt engineering requires precision, an understanding of medical te
 * **Patient-Centricity:** Leverage AI for accessible educational materials.
 * **Ethical Responsibility:** Prioritize HIPAA compliance and de-identified data.
 * **Human Oversight:** AI augments, but never replaces, clinical expertise.
+
+## Additional Frameworks and Best Practices
+
+### The CRAFT-GT Framework
+To ensure comprehensive and safe medical prompts, utilize the CRAFT-GT framework:
+*   **Context:** Embed necessary patient history, lab results, or evidence-based guidelines directly into the prompt.
+*   **Role:** Explicitly state the AI's role (e.g., "Act as a pediatric neurologist").
+*   **Audience:** Define the target audience (e.g., "Explain this to a patient at a sixth-grade reading level").
+*   **Format:** Specify the desired format, such as a SOAP note, a discharge summary, or a structured table.
+*   **Task & Goal:** Clearly outline the medical task or question.
+*   **Tone:** Ensure the tone is professional, empathetic, or appropriate for the audience.
+
+### Prompt Template using standard frameworks (RACE/RTF)
+When designing foundational prompt templates, use frameworks like RACE (Role, Action, Context, Expectation) and ensure explicit instructions for PII:
+*   **Template for Patient Record Summarization:** "Act as a clinical documentation specialist [Role]. Summarize the following consultation notes [Action]. The patient has a history of type 2 diabetes [Context]. Provide a bulleted list of key findings and explicitly redact any Personally Identifiable Information (PII) before generating the output [Expectation]."

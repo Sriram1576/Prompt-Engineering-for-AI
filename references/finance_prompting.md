@@ -133,3 +133,15 @@ Precision, context, and iterative refinement are critical for financial prompt e
 - SEC.gov (U.S. Regulations)
 - FASB.org (US GAAP)
 - IFRSFoundation.org (IFRS)
+
+## Additional Frameworks and Best Practices
+
+### Data-Driven Prompting
+When working with financial data, structure the input effectively. Provide well-formatted tabular data (e.g., CSV, JSON) to ensure optimal LLM parsing and accuracy in financial analysis.
+
+### Task Decomposition
+Do not rely on the LLM for complex calculations. Separate extraction from calculation. For example, use the LLM to extract key metrics from a financial report, and then use specialized tools (like Python scripts via agents) to perform the mathematical calculations.
+
+### Prompt Template for Market Trend Analysis
+When designing foundational prompt templates, use reporting standards and frameworks:
+*   **Template:** "Act as a Senior FP&A Analyst [Role]. Analyze the following quarterly data [Action]. Ensure your analysis references the SEC guidelines and GAAP reporting standards [Context]. Provide a structured report outlining variances and potential risks [Expectation]."

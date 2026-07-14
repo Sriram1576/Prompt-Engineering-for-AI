@@ -108,3 +108,15 @@ To elevate legal prompt engineering, address complex legal reasoning explicitly:
 - **Liability Management:** Independently verify all AI-generated citations and facts.
 
 *Note: For the upcoming Module 13 Assessment, prepare to formulate domain-specific prompts that balance AI capabilities with strict legal and ethical constraints.*
+
+## Additional Frameworks and Best Practices
+
+### Retrieval-Augmented Generation (RAG)
+Never rely on the LLM's internal memory for case law, as this leads to fictitious citations (hallucinations). Always connect prompts to a closed database of verified case law and statutes using Retrieval-Augmented Generation (RAG).
+
+### Negative Prompting
+Explicitly state what the model should *not* do. For example, include instructions like: "Do not invent cases" or "If the agreement is silent on a matter, state so explicitly rather than guessing."
+
+### Prompt Template for Legal Clauses
+When drafting legal clauses, always include caveats regarding professional review:
+*   **Template:** "Act as a commercial lawyer specializing in M&A [Role]. Draft a 'Limitation of Liability' clause for a software agreement under New York law [Action/Context]. Format the output clearly and include a disclaimer stating that this is an AI-generated draft requiring review by a licensed attorney [Expectation]."

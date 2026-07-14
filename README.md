@@ -52,7 +52,6 @@ The skill relies on a built-in curriculum located in the `references/` directory
 - **`healthcare_prompting.md`**: Prompt Engineering in Healthcare, Medical Terminology, Patient Record Summarization, Diagnostic Assistance, HIPAA Compliance.
 - **`finance_prompting.md`**: Prompt Engineering in Finance, Market Analysis, Trend Prediction, Financial Reports, Fraud Detection, Regulatory Compliance.
 - **`legal_prompting.md`**: Prompt Engineering in Law, Legal Terminology, Case Law Analysis, Document Summarization, Contract Clause Generation, Attorney-Client Privilege.
-- **`week7_summary.md`**: Cheat Sheet for Domain-Specific Prompt Engineering (Healthcare, Finance, Legal), highlighting core principles, constraints, and best practices.
 
 ## 🛠️ Architecture
 
