@@ -2,7 +2,7 @@
 
 **Prompt Engineer Pro** is a world-class prompt engineering skill for Google Antigravity. It acts as an elite prompt architect, intercepting your vague or general tasks and automatically rewriting them into highly optimized, detailed prompts that yield outstanding results when fed to Large Language Models.
 
-This skill is powered by a comprehensive 4-week Prompt Engineering curriculum knowledge base, natively integrated so the AI can look up and apply advanced frameworks (RACE, RTF, Chain of Thought, Prompt Chaining) on the fly.
+This skill is powered by a comprehensive 7-week Prompt Engineering curriculum knowledge base, natively integrated so the AI can look up and apply advanced frameworks (RACE, RTF, Chain of Thought, Prompt Chaining) on the fly.
 
 ## 🚀 Installation
 
@@ -52,6 +52,7 @@ The skill relies on a built-in curriculum located in the `references/` directory
 - **`healthcare_prompting.md`**: Prompt Engineering in Healthcare, Medical Terminology, Patient Record Summarization, Diagnostic Assistance, HIPAA Compliance.
 - **`finance_prompting.md`**: Prompt Engineering in Finance, Market Analysis, Trend Prediction, Financial Reports, Fraud Detection, Regulatory Compliance.
 - **`legal_prompting.md`**: Prompt Engineering in Law, Legal Terminology, Case Law Analysis, Document Summarization, Contract Clause Generation, Attorney-Client Privilege.
+- **`week7_summary.md`**: Cheat Sheet for Domain-Specific Prompt Engineering (Healthcare, Finance, Legal), highlighting core principles, constraints, and best practices.
 
 ## 🛠️ Architecture
 

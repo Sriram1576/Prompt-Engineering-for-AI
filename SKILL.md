@@ -5,7 +5,7 @@ description: Advanced prompt engineering intelligence for LLM task optimization
 
 # prompt-engineer-pro
 
-Comprehensive prompt engineering guide and framework repository. Contains advanced strategies for chatbot prompting, code generation, creative writing, and data extraction based on a rigorous 4-week Prompt Engineering curriculum.
+Comprehensive prompt engineering guide and framework repository. Contains advanced strategies for chatbot prompting, code generation, creative writing, and data extraction based on a rigorous 7-week Prompt Engineering curriculum.
 
 ## How to Use This Skill
 
@@ -39,6 +39,7 @@ Depending on the Core Intent, use the `view_file` tool to search the relevant we
 - **`references/healthcare_prompting.md`**: Medical Terminology, Patient Record Summarization, Diagnostic Assistance, HIPAA Compliance. Use for **healthcare and medical use cases**.
 - **`references/finance_prompting.md`**: Market Analysis, Trend Prediction, Financial Reports, Fraud Detection, Regulatory Compliance. Use for **financial and quantitative use cases**.
 - **`references/legal_prompting.md`**: Legal Terminology, Case Law Analysis, Document Summarization, Contract Clause Generation. Use for **legal and compliance use cases**.
+- **`references/week7_summary.md`**: Cheat Sheet for Domain-Specific Prompt Engineering (Healthcare, Finance, Legal). Use for **quick reference on constraints and best practices in regulated industries**.
 
 *If you are already familiar with the frameworks, you may skip reading the files and apply the frameworks directly.*
 
