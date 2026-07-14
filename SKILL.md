@@ -36,6 +36,9 @@ Depending on the Core Intent, use the `view_file` tool to search the relevant we
 - **`references/project_ideation_and_scoping.md`**: Identifying AI Opportunities, SMART Goals, Feasibility Assessment, Tool Selection, Project Planning. Use for **planning and scoping real-world AI projects**.
 - **`references/building_a_prototype_bot.md`**: Designing FAQ Prompts, Conversation History Management, UI Integration, Handling Escalations. Use for **building functional AI chatbot prototypes**.
 - **`references/content_generation_pipeline.md`**: Prompt Chaining, AI-Assisted Research, CMS Integration, Quality Metrics, Workflow Optimization. Use for **building scalable automated content pipelines**.
+- **`references/healthcare_prompting.md`**: Medical Terminology, Patient Record Summarization, Diagnostic Assistance, HIPAA Compliance. Use for **healthcare and medical use cases**.
+- **`references/finance_prompting.md`**: Market Analysis, Trend Prediction, Financial Reports, Fraud Detection, Regulatory Compliance. Use for **financial and quantitative use cases**.
+- **`references/legal_prompting.md`**: Legal Terminology, Case Law Analysis, Document Summarization, Contract Clause Generation. Use for **legal and compliance use cases**.
 
 *If you are already familiar with the frameworks, you may skip reading the files and apply the frameworks directly.*
 

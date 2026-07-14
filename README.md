@@ -49,6 +49,9 @@ The skill relies on a built-in curriculum located in the `references/` directory
 - **`project_ideation_and_scoping.md`**: Identifying AI Opportunities, SMART Goals, Feasibility Assessment, Tool Selection, Project Planning.
 - **`building_a_prototype_bot.md`**: Designing FAQ Prompts, Conversation History Management, UI Integration, Handling Escalations.
 - **`content_generation_pipeline.md`**: Prompt Chaining, AI-Assisted Research, CMS Integration, Quality Metrics, Workflow Optimization.
+- **`healthcare_prompting.md`**: Prompt Engineering in Healthcare, Medical Terminology, Patient Record Summarization, Diagnostic Assistance, HIPAA Compliance.
+- **`finance_prompting.md`**: Prompt Engineering in Finance, Market Analysis, Trend Prediction, Financial Reports, Fraud Detection, Regulatory Compliance.
+- **`legal_prompting.md`**: Prompt Engineering in Law, Legal Terminology, Case Law Analysis, Document Summarization, Contract Clause Generation, Attorney-Client Privilege.
 
 ## 🛠️ Architecture
 
