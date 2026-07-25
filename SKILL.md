@@ -5,7 +5,7 @@ description: Advanced prompt engineering intelligence for LLM task optimization
 
 # prompt-engineer-pro
 
-Comprehensive prompt engineering guide and framework repository. Contains advanced strategies for chatbot prompting, code generation, creative writing, and data extraction based on a rigorous 7-week Prompt Engineering curriculum.
+Comprehensive prompt engineering guide and framework repository. Contains advanced strategies for chatbot prompting, code generation, creative writing, and data extraction based on a rigorous 8-week Prompt Engineering curriculum.
 
 ## How to Use This Skill
 
@@ -39,6 +39,10 @@ Depending on the Core Intent, use the `view_file` tool to search the relevant we
 - **`references/healthcare_prompting.md`**: Medical Terminology, Patient Record Summarization, Diagnostic Assistance, HIPAA Compliance. Use for **healthcare and medical use cases**.
 - **`references/finance_prompting.md`**: Market Analysis, Trend Prediction, Financial Reports, Fraud Detection, Regulatory Compliance. Use for **financial and quantitative use cases**.
 - **`references/legal_prompting.md`**: Legal Terminology, Case Law Analysis, Document Summarization, Contract Clause Generation. Use for **legal and compliance use cases**.
+- **`references/capstone_project_brief_and_architecture.md`**: Capstone Project Brief, Business Context, User Personas (Marketing Managers, Content Creators, Business Owners), and Core Platform Architecture. Use for **architecting end-to-end AI applications**.
+- **`references/capstone_data_acquisition_and_preparation.md`**: Data Sourcing (Kaggle, Hugging Face, Synthetic Data), Cleaning & Preprocessing (Missing Values, Normalization, Tokenization), Storage (CSV vs SQLite), and ER Diagrams. Use for **building AI data pipelines**.
+- **`references/capstone_backend_and_ai_integration.md`**: Python Backend Architecture (Flask), OpenAI API Integration, Hugging Face Transformers Sentiment Analysis, Dynamic Prompt Assembly, and API Key Security. Use for **backend web and API integration**.
+- **`references/capstone_deployment_and_deliverables.md`**: Production Deployment (Docker, K8s, Cloud), Scalability, Monitoring, Complete Dockerfile, and Final Capstone Deliverables (Prototype, Docs, Presentation). Use for **production deployment and capstone preparation**.
 
 *If you are already familiar with the frameworks, you may skip reading the files and apply the frameworks directly.*
 

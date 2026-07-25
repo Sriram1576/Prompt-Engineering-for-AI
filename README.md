@@ -2,7 +2,7 @@
 
 **Prompt Engineer Pro** is a world-class prompt engineering skill for Google Antigravity. It acts as an elite prompt architect, intercepting your vague or general tasks and automatically rewriting them into highly optimized, detailed prompts that yield outstanding results when fed to Large Language Models.
 
-This skill is powered by a comprehensive 7-week Prompt Engineering curriculum knowledge base, natively integrated so the AI can look up and apply advanced frameworks (RACE, RTF, Chain of Thought, Prompt Chaining) on the fly.
+This skill is powered by a comprehensive 8-week Prompt Engineering curriculum knowledge base, natively integrated so the AI can look up and apply advanced frameworks (RACE, RTF, Chain of Thought, Prompt Chaining) on the fly.
 
 ## 🚀 Installation
 
@@ -52,6 +52,10 @@ The skill relies on a built-in curriculum located in the `references/` directory
 - **`healthcare_prompting.md`**: Prompt Engineering in Healthcare, Medical Terminology, Patient Record Summarization, Diagnostic Assistance, HIPAA Compliance.
 - **`finance_prompting.md`**: Prompt Engineering in Finance, Market Analysis, Trend Prediction, Financial Reports, Fraud Detection, Regulatory Compliance.
 - **`legal_prompting.md`**: Prompt Engineering in Law, Legal Terminology, Case Law Analysis, Document Summarization, Contract Clause Generation, Attorney-Client Privilege.
+- **`capstone_project_brief_and_architecture.md`**: Capstone Project Brief, Business Context, User Personas (Marketing Managers, Content Creators, Business Owners), and Core Platform Architecture.
+- **`capstone_data_acquisition_and_preparation.md`**: Data Sourcing (Kaggle, Hugging Face, Synthetic Data), Cleaning & Preprocessing (Missing Values, Normalization, Tokenization), Storage (CSV vs SQLite), and ER Diagrams.
+- **`capstone_backend_and_ai_integration.md`**: Python Backend Architecture (Flask), OpenAI API Integration, Hugging Face Transformers Sentiment Analysis, Dynamic Prompt Assembly, and API Key Security.
+- **`capstone_deployment_and_deliverables.md`**: Production Deployment (Docker, K8s, Cloud), Scalability, Monitoring, Complete Dockerfile, and Final Capstone Deliverables (Prototype, Docs, Presentation).
 
 ## 🛠️ Architecture
 
